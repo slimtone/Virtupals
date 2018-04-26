@@ -1,6 +1,6 @@
-const crypto = require('crypto')
-const Sequelize = require('sequelize')
-const db = require('../db')
+const crypto = require('crypto');
+const Sequelize = require('sequelize');
+const db = require('../db');
 
 const User = db.define('user', {
   email: {
@@ -26,8 +26,63 @@ const User = db.define('user', {
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      notEmpty: true
+    }
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      notEmpty: true
+    }
+  },
+  phoneNumber: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      notEmpty: true
+    }
+  },
+  addressLine1: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      notEmpty: true
+    }
+  },
+  addressLine2: {
+    type: Sequelize.STRING,
+  },
+  city: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      notEmpty: true
+    }
+  },
+  state: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      notEmpty: true
+    }
+  },
+  zip: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      notEmpty: true
+    }
+  },
+  quizPoints: {
+    type: Sequelize.INTEGER
   }
-})
+});
 
 module.exports = User
 
