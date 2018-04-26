@@ -1,32 +1,44 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {logout} from '../store'
+import React from "react";
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {Link} from "react-router-dom";
+import {logout} from "../store";
+import { Menu, Segment, Dropdown } from "semantic-ui-react";
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
   <div>
-    <h1>BOILERMAKER</h1>
-    <nav>
+
+    <Segment inverted>
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
+          <Menu inverted secondary>
+          <Menu.Item as={Link} to="/" name="Home" />
+          <Menu.Menu position="right">
+          <Dropdown text="Settings" className="link item">
+                <Dropdown.Menu>
+                  <Dropdown.Item as={Link} to="/myAccount">My Account</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/editAccount">Edit My Account</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+          <Menu.Item name="LogOut" onClick={handleClick} />
+            </Menu.Menu>
+          </Menu>
         </div>
       ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
+        <Menu inverted secondary>
+        {/* The navbar will show these links before you log in */}
+          <Menu.Item as={Link} to="/" name="Home" />
+          <Menu.Menu position="right">
+            <Menu.Item as={Link} to="/login" name="Login" />
+            <Menu.Item as={Link} to="/signup" name="Signup" />
+          </Menu.Menu>
+       </Menu>
       )}
-    </nav>
-    <hr />
+      </Segment>
+
   </div>
-)
+);
 
 /**
  * CONTAINER
