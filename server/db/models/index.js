@@ -22,6 +22,7 @@ Message.belongsTo(Channel);
 Message.belongsTo(User);
 Question.hasMany(Answer, {constraints: false});
 Answer.belongsTo(Question, {onDelete: 'cascade', constraints: false});
+Answer.belongsTo(User, {onDelete: 'cascade', constraints: false});
 
 
 

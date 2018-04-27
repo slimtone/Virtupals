@@ -14,7 +14,6 @@ export class Quiz extends React.Component {
     }
   }
 
-
   componentDidMount() {
     if (this.props.loadQuestions){
       this.props.loadQuestions();
