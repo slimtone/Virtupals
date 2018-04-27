@@ -1,7 +1,8 @@
 const User = require('./user')
 const Question = require('./question');
 const Answer = require('./answer');
-
+const Channel = require('./channel');
+const Message = require('./message');
 /**
  * If we had any associations to make, this would be a great place to put them!
  * ex. if we had another model called BlogPost, we might say:
@@ -9,10 +10,18 @@ const Answer = require('./answer');
  *    BlogPost.belongsTo(User)
  */
 
-User.belongsToMany(Answer, {through: 'UserAnswers'});
+ Channel.hasMany(Message, {
+   onDelete: 'cascade',
+   hooks: true
+ });
+
+User.hasMany(Message);
+User.belongsToMany(Channel, {through: 'Matches'});
+Channel.belongsToMany(User, {through: 'Matches'});
+Message.belongsTo(Channel);
+Message.belongsTo(User);
 Question.hasMany(Answer, {constraints: false});
 Answer.belongsTo(Question, {onDelete: 'cascade', constraints: false});
-Answer.belongsToMany(User, {through: 'UserAnswers'});
 
 
 
@@ -25,5 +34,7 @@ Answer.belongsToMany(User, {through: 'UserAnswers'});
 module.exports = {
   User,
   Question,
-  Answer
+  Answer,
+  Channel,
+  Message
 }

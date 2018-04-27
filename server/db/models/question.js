@@ -9,15 +9,6 @@ const Question = db.define('question', {
       notEmpty: true
     }
   }
-}, {
-  add: (text) => {
-    return Question.create({
-      text
-    })
-    .then(record => {
-      return record;
-    })
-  }
 })
 
 module.exports = Question;

@@ -14,26 +14,30 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
           {/* The navbar will show these links after you log in */}
           <Menu inverted secondary>
           <Menu.Item as={Link} to="/" name="Home" />
+          <Menu.Item as={Link} to ="/quiz" name="Take quiz" />
           <Menu.Menu position="right">
+          <Menu.Item as={Link} to = "/myMatches" name="My Matches" />
           <Dropdown text="Settings" className="link item">
                 <Dropdown.Menu>
                   <Dropdown.Item as={Link} to="/myAccount">My Account</Dropdown.Item>
                   <Dropdown.Item as={Link} to="/editAccount">Edit My Account</Dropdown.Item>
                 </Dropdown.Menu>
-              </Dropdown>
+          </Dropdown>
           <Menu.Item name="LogOut" onClick={handleClick} />
             </Menu.Menu>
           </Menu>
         </div>
       ) : (
-        <Menu inverted secondary>
+        <div>
         {/* The navbar will show these links before you log in */}
+        <Menu inverted secondary>
           <Menu.Item as={Link} to="/" name="Home" />
           <Menu.Menu position="right">
             <Menu.Item as={Link} to="/login" name="Login" />
             <Menu.Item as={Link} to="/signup" name="Signup" />
           </Menu.Menu>
        </Menu>
+       </div>
       )}
       </Segment>
 
@@ -45,7 +49,7 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
  */
 const mapState = state => {
   return {
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user,
   }
 }
 
@@ -57,7 +61,7 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar)
+export default connect(mapState, mapDispatch)(Navbar);
 
 /**
  * PROP TYPES
