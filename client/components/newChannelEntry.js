@@ -5,6 +5,7 @@ import { writeChannelName, postChannel } from '../store';
 function NewChannelEntry (props) {
 
   const { newChannelEntry, handleSubmit, handleChange } = props;
+  console.log(handleSubmit);
 
   return (
     <form onSubmit={handleSubmit}>

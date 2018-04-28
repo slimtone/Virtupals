@@ -11,9 +11,10 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
+  console.log('REQ.BODY', req.body);
   Answer.create(req.body)
     .then(answer => {
-      req.json(answer);
+      res.json(answer);
     })
     .catch(next);
 })
