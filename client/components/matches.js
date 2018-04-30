@@ -5,11 +5,10 @@ import { connect } from 'react-redux';
 function Matches (props) {
 
   const { channels, user } = props;
-  console.log(user);
 
   return (
     <ul>
-    <h2>Your matches</h2>
+    <h2 className="container">Your matches</h2>
       {
         channels.map(channel => {
           return (

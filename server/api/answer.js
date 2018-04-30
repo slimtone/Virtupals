@@ -24,7 +24,7 @@ router.get('/', (req, res, next) => {
       currentUserAnswer = answer.dataValues;
       Answer.findAll(
         {
-        attributes: ['q1', 'q2', 'q3', 'userId'],
+        attributes: ['q1', 'q2', 'q3', 'q4', 'q5', 'userId'],
         raw: true,
         where: {
           userId: {
@@ -47,6 +47,9 @@ router.get('/', (req, res, next) => {
         user2: allAnswers.userId
       })
     }
+  })
+  .then(() => {
+    res.redirect('/myMatches');
   })
     .catch(next);
   })
