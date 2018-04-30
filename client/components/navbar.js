@@ -49,7 +49,6 @@ const Navbar = ({ handleClick, isLoggedIn, channels }) => (
 const mapState = state => {
   return {
     isLoggedIn: !!state.user.firstName,
-    channels: state.channels
   }
 }
 

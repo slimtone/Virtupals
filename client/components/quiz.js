@@ -39,38 +39,38 @@ export class Quiz extends React.Component {
     return (
 
     <form onSubmit={this.handleSubmit}>
-    <h3 className="container" >Do you prefer morning or night showers?</h3>
+    <h3 className="container" >When you’re having a bad day, what do you do to make yourself feel better?</h3>
     <p className="container">
-          Morning Showers: <input type="radio" onChange={this.handleInputChange} name="q1" value="1" /> <br />
-          Night Showers: <input type="radio" onChange={this.handleInputChange} name="q1" value="2" /> <br />
-          I don't shower: <input type="radio" onChange={this.handleInputChange} name="q1" value="3" />
+          I look at Thunks and admire how great they are: <input type="radio" onChange={this.handleInputChange} name="q1" value="1" /> <br />
+          I redo the TESTING WIKISTACK workshop: <input type="radio" onChange={this.handleInputChange} name="q1" value="2" /> <br />
+          Get turnt at Killarney's: <input type="radio" onChange={this.handleInputChange} name="q1" value="3" />
     </p>
-    <h3 className="container">What color are the majority of your clothes in your closet?</h3>
+    <h3 className="container">What’s the most courageous thing you’ve ever done?</h3>
     <p className="container">
-          White: <input type="radio" onChange={this.handleInputChange} name="q2" value="1" /> <br />
-          Black: <input type="radio" onChange={this.handleInputChange} name="q2" value="2" /> <br />
-          Mixed colors: <input type="radio" onChange={this.handleInputChange} name="q2" value="3" />
+          Presented a poorly made stackathon: <input type="radio" onChange={this.handleInputChange} name="q2" value="1" /> <br />
+          Hot Seat: <input type="radio" onChange={this.handleInputChange} name="q2" value="2" /> <br />
+          Ice breakers: <input type="radio" onChange={this.handleInputChange} name="q2" value="3" />
     </p>
-    <h3 className="container">Do you prefer comedy, horror or no movies at all?
+    <h3 className="container">What is your favorite meal?
     </h3>
     <p className="container">
-          Comedy: <input type="radio" onChange={this.handleInputChange} name="q3" value="1" /> <br />
-          Horror: <input type="radio" onChange={this.handleInputChange} name="q3" value="2" /> <br />
-          I don't like movies: <input type="radio" onChange={this.handleInputChange} name="q3" value="3" />
+          Random meal from Mealpal : <input type="radio" onChange={this.handleInputChange} name="q3" value="1" /> <br />
+          Bánh mì: <input type="radio" onChange={this.handleInputChange} name="q3" value="2" /> <br />
+          Cereal: <input type="radio" onChange={this.handleInputChange} name="q3" value="3" />
     </p>
-    <h3 className="container">Do you like partying?
+    <h3 className="container">What would be the worst thing to hear as you are going under anesthesia before heart surgery?
     </h3>
     <p className="container">
-          I love parties: <input type="radio" onChange={this.handleInputChange} name="q4" value="1" /> <br />
-          Only with friends: <input type="radio" onChange={this.handleInputChange} name="q4" value="2" /> <br />
-          Not really: <input type="radio" onChange={this.handleInputChange} name="q4" value="3" />
+          Your code broke: <input type="radio" onChange={this.handleInputChange} name="q4" value="1" /> <br />
+          Your favorite Thunk isn't working: <input type="radio" onChange={this.handleInputChange} name="q4" value="2" /> <br />
+          There's a massive merge conflict on your PR: <input type="radio" onChange={this.handleInputChange} name="q4" value="3" />
     </p>
-    <h3 className="container">Would you ever cheat on your taxes?
+    <h3 className="container">What’s your favorite time of the day?
     </h3>
     <p className="container">
-          Never, i love my country: <input type="radio" onChange={this.handleInputChange} name="q5" value="1" /> <br />
-          Sometimes: <input type="radio" onChange={this.handleInputChange} name="q5" value="2" /> <br />
-          All the time: <input type="radio" onChange={this.handleInputChange} name="q5" value="3" />
+          REACTO: <input type="radio" onChange={this.handleInputChange} name="q5" value="1" /> <br />
+          REACTO: <input type="radio" onChange={this.handleInputChange} name="q5" value="2" /> <br />
+          REACTO: <input type="radio" onChange={this.handleInputChange} name="q5" value="3" />
     </p>
   <input className="container" type="submit" value="Submit" />
   </form>
