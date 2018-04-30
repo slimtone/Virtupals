@@ -1,7 +1,3 @@
-const Message = require('../db/models/message');
-const Channel = require('../db/models/channel');
-
-
 module.exports = (io) => {
   io.on('connection', (socket) => {
     console.log(`A socket connection to the server has been made: ${socket.id}`)

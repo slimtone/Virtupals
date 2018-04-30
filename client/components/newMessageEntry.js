@@ -25,7 +25,7 @@ function NewMessageEntry (props) {
   );
 }
 
-const mapStateToProps = function (state, ownProps) {
+const mapStateToProps = function (state) {
   return {
     newMessageEntry: state.newMessageEntry,
     name: state.name

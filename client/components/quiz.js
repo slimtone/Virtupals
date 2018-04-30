@@ -1,7 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { Input } from "semantic-ui-react";
+import React from 'react';
 import {connect} from 'react-redux';
 import {fetchQuestions, createAnswer} from '../store';
 
@@ -27,7 +24,6 @@ export class Quiz extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log(name, value)
     this.setState({
         [name]: value
     });
@@ -35,12 +31,10 @@ export class Quiz extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    console.log('PROPS', this.props.questions[0].id);
     this.props.postAnswerThunk({q1: this.state.q1, q2: this.state.q2, q3: this.state.q3,  userId: this.props.user.id});
   }
 
   render() {
-    const {questions} = this.props;
 
     return (
 

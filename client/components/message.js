@@ -8,7 +8,7 @@ export default function Message (props) {
     <li className="media">
       <div className="media-left">
         <a href="#">
-          <img className="media-object" src={message.user.image} alt="image" height='50' width='50' />
+          <img className="media-object" src={message.user.image} alt="image" height="50" width="50" />
         </a>
       </div>
       <div className="media-body">

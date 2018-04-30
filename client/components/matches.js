@@ -1,29 +1,28 @@
 import React from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import NameEntry from './nameEntry';
 
 function Matches (props) {
 
-  const { messages, channels } = props;
+  const { channels, user } = props;
+  console.log(user);
 
   return (
     <ul>
+    <h2>Your matches</h2>
       {
         channels.map(channel => {
           return (
-            <li key={channel.id}>
+            <ul key={channel.id}>
+            {channel.user1 || channel.user2 === user.id ?
               <NavLink to={`/channels/${channel.id}`}>
                 <span># {channel.name}</span>
-                <span className="badge">{ messages.filter(message => message.channelId === channel.id).length }</span>
               </NavLink>
-            </li>
+              : null}
+            </ul>
           );
         })
       }
-      <li>
-        <NavLink to="/new-channel">Create a channel...</NavLink>
-      </li>
     </ul>
   );
 }
@@ -31,7 +30,9 @@ function Matches (props) {
 const mapStateToProps = function (state) {
   return {
     messages: state.messages,
-    channels: state.channels
+    channels: state.channels,
+    matches: state.matches,
+    user: state.user
   };
 };
 

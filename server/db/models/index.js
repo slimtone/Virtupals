@@ -3,6 +3,7 @@ const Question = require('./question');
 const Answer = require('./answer');
 const Channel = require('./channel');
 const Message = require('./message');
+
 /**
  * If we had any associations to make, this would be a great place to put them!
  * ex. if we had another model called BlogPost, we might say:
@@ -16,15 +17,11 @@ const Message = require('./message');
  });
 
 User.hasMany(Message);
-User.belongsToMany(Channel, {through: 'Matches'});
-Channel.belongsToMany(User, {through: 'Matches'});
 Message.belongsTo(Channel);
 Message.belongsTo(User);
-Question.hasMany(Answer, {constraints: false});
-Answer.belongsTo(Question, {onDelete: 'cascade', constraints: false});
+// Question.hasMany(Answer, {constraints: false});
+// Answer.belongsTo(Question, {onDelete: 'cascade', constraints: false});
 Answer.belongsTo(User, {onDelete: 'cascade', constraints: false});
-
-
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -37,5 +34,5 @@ module.exports = {
   Question,
   Answer,
   Channel,
-  Message
+  Message,
 }

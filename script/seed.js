@@ -20,7 +20,8 @@ async function seed () {
 
   const users = await Promise.all([
     User.create({email: 'geoff@email.com', password: '123', firstName: 'Geoff', lastName: 'Banks', phoneNumber: '7187213241', addressLine1: '5 hanover square', city: 'New York', state: 'NY', zip: '11000', quizPoints: 31}),
-    User.create({email: 'corey@email.com', password: '123', firstName: 'Corey', lastName: 'Banks', phoneNumber: '7187213241', addressLine1: '5 hanover square', city: 'New York', state: 'NY', zip: '11000', quizPoints: 31})
+    User.create({email: 'corey@email.com', password: '123', firstName: 'Corey', lastName: 'Banks', phoneNumber: '7187213241', addressLine1: '5 hanover square', city: 'New York', state: 'NY', zip: '11000', quizPoints: 31}),
+    User.create({email: 'omri@email.com', password: '123', firstName: 'Omri', lastName: 'Banks', phoneNumber: '7187213241', addressLine1: '5 hanover square', city: 'New York', state: 'NY', zip: '11000', quizPoints: 31})
   ])
 
   const questions = await Promise.all([
@@ -54,11 +55,9 @@ async function seed () {
     Message.create({userId: id(), content: 'I dont like myself', channelId: 4}),
   ])
 
-  // // const answers = await Promise.all([
-  // //   Answer.create({text: ['Morning showers', 'Night Showers'], position: 1, questionId: 1}),
-  // //   Answer.create({text: ['Black', 'White', 'Different Colors'], position: 2, questionId: 2}),
-  // //   Answer.create({text: ['Smart Comedy', 'Stupid Comedy', 'I don`t like comedy'], position: 2, questionId: 3})
-  // ])
+  const answers = await Promise.all([
+    Answer.create({q1: 1, q2: 2, q3: 3, userId: 1})
+  ])
 
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!

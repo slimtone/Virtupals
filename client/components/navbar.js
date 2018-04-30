@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-import {logout} from "../store";
-import { Menu, Segment, Dropdown } from "semantic-ui-react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {logout} from '../store';
+import { Menu, Segment, Dropdown } from 'semantic-ui-react';
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
   <div>

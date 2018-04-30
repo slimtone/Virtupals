@@ -1,4 +1,5 @@
 import axios from 'axios';
+import history from '../history';
 
 //ACTION TYPES
 const GET_QUESTIONS = 'GET_QUESTIONS';
@@ -34,7 +35,9 @@ export const createAnswer = (answer) => {
       .post('/api/answers', answer)
       .then(res => {
         dispatch(postAnswer(res.data));
+        history.push('/myMatches');
       })
+      .catch(err => console.log(err));
   }
 }
 
