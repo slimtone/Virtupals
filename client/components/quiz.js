@@ -31,7 +31,7 @@ export class Quiz extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.postAnswerThunk({q1: this.state.q1, q2: this.state.q2, q3: this.state.q3,  userId: this.props.user.id});
+    this.props.postAnswerThunk({q1: this.state.q1, q2: this.state.q2, q3: this.state.q3, q4: this.state.q4, q5: this.state.q5,  userId: this.props.user.id});
   }
 
   render() {
@@ -39,26 +39,40 @@ export class Quiz extends React.Component {
     return (
 
     <form onSubmit={this.handleSubmit}>
-    <p id="0">Do you prefer morning or night showers?</p>
-    <p>
+    <h3 className="container" >Do you prefer morning or night showers?</h3>
+    <p className="container">
           Morning Showers: <input type="radio" onChange={this.handleInputChange} name="q1" value="1" /> <br />
           Night Showers: <input type="radio" onChange={this.handleInputChange} name="q1" value="2" /> <br />
           I don't shower: <input type="radio" onChange={this.handleInputChange} name="q1" value="3" />
     </p>
-    <p>What color are the majority of your clothes in your closet?</p>
-    <p>
+    <h3 className="container">What color are the majority of your clothes in your closet?</h3>
+    <p className="container">
           White: <input type="radio" onChange={this.handleInputChange} name="q2" value="1" /> <br />
           Black: <input type="radio" onChange={this.handleInputChange} name="q2" value="2" /> <br />
           Mixed colors: <input type="radio" onChange={this.handleInputChange} name="q2" value="3" />
     </p>
-    <p style={{color: 'red'}}>Do you prefer smart comedy, stupid/silly comedy or no comedy at all?
+    <h3 className="container">Do you prefer comedy, horror or no movies at all?
+    </h3>
+    <p className="container">
+          Comedy: <input type="radio" onChange={this.handleInputChange} name="q3" value="1" /> <br />
+          Horror: <input type="radio" onChange={this.handleInputChange} name="q3" value="2" /> <br />
+          I don't like movies: <input type="radio" onChange={this.handleInputChange} name="q3" value="3" />
     </p>
-    <p>
-          Smart comedy: <input type="radio" onChange={this.handleInputChange} name="q3" value="1" /> <br />
-          Stupid comedy: <input type="radio" onChange={this.handleInputChange} name="q3" value="2" /> <br />
-          What's comedy?: <input type="radio" onChange={this.handleInputChange} name="q3" value="3" />
+    <h3 className="container">Do you like partying?
+    </h3>
+    <p className="container">
+          I love parties: <input type="radio" onChange={this.handleInputChange} name="q4" value="1" /> <br />
+          Only with friends: <input type="radio" onChange={this.handleInputChange} name="q4" value="2" /> <br />
+          Not really: <input type="radio" onChange={this.handleInputChange} name="q4" value="3" />
     </p>
-  <input type="submit" value="Submit" />
+    <h3 className="container">Would you ever cheat on your taxes?
+    </h3>
+    <p className="container">
+          Never, i love my country: <input type="radio" onChange={this.handleInputChange} name="q5" value="1" /> <br />
+          Sometimes: <input type="radio" onChange={this.handleInputChange} name="q5" value="2" /> <br />
+          All the time: <input type="radio" onChange={this.handleInputChange} name="q5" value="3" />
+    </p>
+  <input className="container" type="submit" value="Submit" />
   </form>
       )
     }

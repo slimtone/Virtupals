@@ -56,7 +56,7 @@ async function seed () {
   ])
 
   const answers = await Promise.all([
-    Answer.create({q1: 1, q2: 2, q3: 3, userId: 1})
+    Answer.create({q1: 1, q2: 2, q3: 3, q4: 2, q5: 1, userId: 1})
   ])
 
   // Wowzers! We can even `await` on the right-hand side of the assignment operator

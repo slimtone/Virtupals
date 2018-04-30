@@ -23,6 +23,20 @@ const Answer = db.define('answer', {
       notEmpty: true
     }
   },
+  q4: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
+  q5: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
 })
 
 module.exports = Answer;

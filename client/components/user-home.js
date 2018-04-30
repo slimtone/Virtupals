@@ -11,7 +11,7 @@ export const UserHome = (props) => {
   return (
     <div>
       <h2>Welcome, {firstName}</h2>
-      <h3>You have matches waiting for you. Go talk to them, don't be shy! You got this!</h3>
+      <h3>Go check if you got any matches!</h3>
     </div>
   )
 }

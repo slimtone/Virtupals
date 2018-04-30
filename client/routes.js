@@ -9,6 +9,7 @@ import Quiz from './components/quiz';
 import Matches from './components/matches';
 import NewChannelEntry from './components/newChannelEntry';
 import MessagesList from './components/messagesList';
+import Home from './components/home';
 
 
 /**
@@ -25,6 +26,7 @@ class Routes extends Component {
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
+        <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         {
